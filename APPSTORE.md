@@ -12,10 +12,10 @@ App Store Connect → My Apps → **+** → New App.
 
 | Champ | Valeur |
 |---|---|
-| Platform | **watchOS** uniquement (Watch-only app) |
+| Platform | **iOS** (les Watch-only apps modernes Xcode 14+ se publient sous iOS, pas de plateforme watchOS séparée dans App Store Connect) |
 | Name | **Ch'ti Pong** |
 | Primary Language | **French (France)** |
-| Bundle ID | `fr.chtitech.PingPongCoach.watchkitapp` (existant) |
+| Bundle ID | `fr.chtitech.PingPongCoach` (bundle ID **parent**, pas `.watchkitapp` — pour Watch-only apps Xcode 14+, App Store Connect utilise le parent. Le bundle `.watchkitapp` est interne à l'archive.) |
 | SKU | `CHTIPONG001` (libre, identifiant interne) |
 | User Access | Full Access |
 
@@ -293,7 +293,7 @@ App Store Connect → Version 1.0 → Screenshots → glisser-déposer par taill
    - **Version** : `1.0.0`
    - **Build** : `1`
    - **Display Name** : `Ch'ti Pong`
-   - **Bundle Identifier** : `fr.chtitech.PingPongCoach.watchkitapp`
+   - **Bundle Identifier** : `fr.chtitech.PingPongCoach`
 3. Onglet **Signing & Capabilities** :
    - **Automatically manage signing** ✅
    - **Team** : **CHTI-TECH (BBNZX46U4W)**
@@ -361,7 +361,7 @@ Recommandation : **manual release** pour une v1 — ça te laisse le temps de tw
 
 ## Checklist finale avant Submit
 
-- [ ] Bundle ID `fr.chtitech.PingPongCoach.watchkitapp` configuré
+- [ ] Bundle ID `fr.chtitech.PingPongCoach` configuré
 - [ ] Team CHTI-TECH sélectionnée
 - [ ] Version 1.0.0 / Build 1
 - [ ] Capability HealthKit + 3 clés usage description
