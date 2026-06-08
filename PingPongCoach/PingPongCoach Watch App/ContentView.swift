@@ -35,14 +35,25 @@ struct ContentView: View {
             }
             .tint(.green)
 
-            NavigationLink {
-                HistoryView(store: sessionStore)
-            } label: {
-                Label("History", systemImage: "clock.arrow.circlepath")
-                    .font(.caption2)
+            HStack(spacing: 6) {
+                NavigationLink {
+                    HistoryView(store: sessionStore)
+                } label: {
+                    Label("History", systemImage: "clock.arrow.circlepath")
+                        .font(.caption2)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+
+                NavigationLink {
+                    AboutView()
+                } label: {
+                    Image(systemName: "info.circle")
+                        .font(.caption2)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
             }
-            .buttonStyle(.bordered)
-            .controlSize(.small)
         }
         .padding(.horizontal)
     }
